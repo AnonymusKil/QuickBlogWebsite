@@ -1,7 +1,9 @@
+import AddComments from "../components/AddComments";
 import BlogContent from "../components/BlogContent";
 import BlogContentIntro from "../components/BlogContentIntro";
 import Comment from "../components/Comment";
 import Hero from "../components/Hero";
+import ShareArticle from "../components/ShareArticle";
 
 function BlogDetails() {
   return (
@@ -26,6 +28,8 @@ function BlogDetails() {
       <BlogContentIntro/>
       <BlogContent/>
       <Comment/>
+      <AddComments/>
+      <ShareArticle/>
     </main>
   );
 }

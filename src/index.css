@@ -31,3 +31,11 @@ cursor: pointer;
 footer ul li a {
   display: inline-block;
 }
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
