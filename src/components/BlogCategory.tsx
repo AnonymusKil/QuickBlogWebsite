@@ -5,7 +5,7 @@ function BlogCategory() {
     <section className="mt-6 px-4">
       
       {/* scroll container */}
-      <div className="flex lg:justify-center lg:overflow-hidden gap-3 overflow-x-auto no-scrollbar max-w-4xl mx-auto">
+      <div className="flex lg:justify-center lg:overflow-hidden gap-3 overflow-x-auto no-scrollbar max-w-4xl mx-auto text-[16px] text-gray-600 ">
 
         <button className="px-4 py-1 rounded-full bg-secondary text-white whitespace-nowrap">
           All
