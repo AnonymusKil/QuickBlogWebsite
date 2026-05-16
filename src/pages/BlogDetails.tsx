@@ -1,6 +1,6 @@
 import BlogContent from "../components/BlogContent";
 import BlogContentIntro from "../components/BlogContentIntro";
-import Comment from "../components/comment";
+import Comment from "../components/Comment";
 import Hero from "../components/Hero";
 
 function BlogDetails() {
