@@ -5,7 +5,6 @@ function BlogTable() {
     <table className="w-full text-sm text-gray-500">
           <thead className="text-xs text-gray-600 text-left uppercase ">
             <tr>
-              {" "}
               <th scope="col" className="px-2 py-4">
                 #
               </th>
@@ -44,7 +43,6 @@ function BlogTable() {
                 />
               </td>
             </tr>
-
             <tr className="border-y border-gray-300">
               <th className="px-2 py-4">2</th>
               <td className="px-2 py-4">Importance of Tourism</td>
@@ -63,7 +61,6 @@ function BlogTable() {
                 />
               </td>
             </tr>
-
             <tr className="border-y border-gray-300">
               <th className="px-2 py-4  font-bold">3</th>
               <td className="px-2 py-4">The New way of Study</td>
@@ -82,7 +79,6 @@ function BlogTable() {
                 />
               </td>
             </tr>
-
             <tr className="border-y border-gray-300">
               <th className="px-2 py-4  font-bold">4</th>
               <td className="px-2 py-4">Taxes on Luxry Houses</td>
@@ -101,7 +97,6 @@ function BlogTable() {
                 />
               </td>
             </tr>
-
             <tr className="border-y border-gray-300">
               <th className="px-2 py-4  font-bold">5</th>
               <td className="px-2 py-4">Maximazing returns by minimizin resources in your startup</td>

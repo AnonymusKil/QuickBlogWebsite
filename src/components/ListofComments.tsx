@@ -9,7 +9,6 @@ function Comments() {
 
       <div className="bg-white rounded-xl shadow overflow-hidden">
         <table className="w-full text-sm text-left text-gray-600">
-          
           {/* HEADER */}
           <thead className="bg-gray-50 text-gray-500 uppercase text-xs">
             <tr>
@@ -21,7 +20,6 @@ function Comments() {
 
           {/* BODY */}
           <tbody className="divide-y divide-gray-200">
-            
             {[1, 2, 3].map((item) => (
               <tr
                 key={item}

@@ -106,3 +106,9 @@ function Comments() {
 }
 
 export default Comments;
+
+
+
+https://quick-blog-server.vercel.app/api/blog/6836c6bf26d4d1dbe797778e
+https://bobctmjfnhhmfitkzaxk.supabase.co/comment
+https://bobctmjfnhhmfitkzaxk.supabase.co/BlogTable

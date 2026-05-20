@@ -11,7 +11,7 @@ import Dashboard from "./components/Dashboard";
 import AllBlogs from "./components/AllBlogs";
 import Comments from "./components/ListofComments";
 function App() {
-  return (
+   return (
     <div className="">
       <NavBar />
       <Routes>

@@ -1,40 +1,87 @@
-import { assets, dashboard_data } from "../assets/assets";
+import { useState, useEffect } from "react";
+import { supabase } from "../config/supabase";
+import { assets } from "../assets/assets";
 import LatestBlogsTable from "./LatestBlogsTable";
+type comments = {
+  id: number;
+  name: string;
+  commentcontent: string;
+  created_at: string;
+}
+type Blog = {
+  id: number;
+  title: string;
+  subtitle: string;
+  uploadBlogFile: string;
+  blogcategory: string;
+};
 function Dashboard() {
+  const [drafts, setDrafts] = useState<Blog[]>([]);
+  const [comments, setComments] = useState<comments[]>([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data: draftData } = await supabase
+        .from("BlogTable")
+        .select("*")
+        .eq("publish", false);
+
+      const { data: commentData } = await supabase
+        .from("comment")
+        .select("*");
+
+      const { data: blogData } = await supabase
+        .from("BlogTable")
+        .select("*")
+        .eq("publish", true);
+
+      if (draftData) setDrafts(draftData);
+      if (commentData) setComments(commentData);
+      if (blogData) setBlogs(blogData);
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <section className=" ">
+    <section>
       <div className="flex flex-wrap gap-4">
-        <div className="flex items-center bg-white p-4 min-w-58 rounded shadow cursor-pointer hover:scale-105 transition-all gap-4">
+        {/* BLOGS */}
+        <div className="flex items-center bg-white p-4 min-w-58 rounded shadow gap-4">
           <img src={assets.dashboard_icon_1} alt="" />
           <div>
             <p className="text-xl font-semibold text-gray-600">
-              {dashboard_data.blogs}
+              {blogs.length}
             </p>
             <p className="text-gray-400 font-light">Blogs</p>
           </div>
         </div>
 
-        <div className="flex items-center bg-white p-4 min-w-58 rounded shadow cursor-pointer  hover:scale-105 transition-all gap-4">
+        {/* COMMENTS */}
+        <div className="flex items-center bg-white p-4 min-w-58 rounded shadow gap-4">
           <img src={assets.dashboard_icon_2} alt="" />
           <div>
             <p className="text-xl font-semibold text-gray-600">
-              {dashboard_data.comments}
+              {comments.length}
             </p>
-            <p className="text-gray-400 font-light">comments</p>
+            <p className="text-gray-400 font-light">Comments</p>
           </div>
         </div>
 
-        <div className="flex items-center bg-white p-4 min-w-58 rounded shadow cursor-pointer  hover:scale-105 transition-all gap-4">
+        {/* DRAFTS */}
+        <div className="flex items-center bg-white p-4 min-w-58 rounded shadow gap-4">
           <img src={assets.dashboard_icon_3} alt="" />
           <div>
             <p className="text-xl font-semibold text-gray-600">
-              {dashboard_data.drafts}
+              {drafts.length}
             </p>
-            <p className="text-gray-400 font-light">draft</p>
+            <p className="text-gray-400 font-light">Drafts</p>
           </div>
         </div>
       </div>
-      <LatestBlogsTable/>
+
+      <LatestBlogsTable />
     </section>
   );
 }
